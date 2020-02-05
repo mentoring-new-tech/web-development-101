@@ -1,0 +1,8 @@
+/* The CSS property margin defines the margin area on the four sides of the element. */
+.container-fluid {
+    margin-top: 50px;
+}
+.btn{
+    width: 100px;
+    margin: 5px; /* In this case we have 5px for top, right, bottom and left */
+}
