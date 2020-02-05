@@ -1,0 +1,26 @@
+{
+  "name": "inventory",
+  "version": "1.0.0",
+  "description": "Basic project to understand how to create an web app with Node.js, Angular and Cloudant NoSQL database",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mentoring-new-tech/web-development-101.git"
+  },
+  "author": "gustavo.guedes@fatec.sp.gov.br",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/mentoring-new-tech/web-development-101/issues"
+  },
+  "homepage": "https://github.com/mentoring-new-tech/web-development-101#readme",
+  "dependencies": {
+    "@cloudant/cloudant": "^4.2.3",
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "morgan": "^1.9.1"
+  }
+}
