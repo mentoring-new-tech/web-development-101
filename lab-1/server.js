@@ -27,7 +27,7 @@ app.get('/', (req, res, next) => {
 
 /**
  * If the server does not find any GET url matching
- * it will fall where, as * means 'everything'
+ * it will fall here, as * means 'everything'
  */
 app.get('*', (req, res, next) => {
     return res.status(404).send('Web page not found');
