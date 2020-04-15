@@ -1,0 +1,9 @@
+nav{
+    background: blue; /* change the color to blue*/
+}
+nav a{
+    color: white; /* change the font color to white*/
+}
+.container{
+    text-align: center; /* centralize text*/
+}
