@@ -1,0 +1,26 @@
+<!-- Div tag separates groups of related menu items with a divider -->
+<div class="container-fluid col-10"><!-- Here we are using 10 of 12 columns and centralizing the component -->
+      <h3>Suppliers List</h3>
+      <table class="table"> <!-- Tag for table creation -->
+        <thead>
+          <tr><!-- Each table row is defined with the <tr> tag -->
+            <th scope="col">#</th> <!-- A table header is defined with the <th> tag -->
+            <th scope="col">Name</th>
+            <th scope="col">CNPJ</th>
+            <th scope="col">Address</th>
+            <th scope="col">Tel</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody> <!-- Table body-->
+          <tr>
+            <th scope="row">1</th>
+            <td>Mark</td> <!-- A table data/cell is defined with the <td> tag -->
+            <td>555444333222</td>
+            <td>@mdo</td>
+            <td>9999</td>
+            <td><span id="delete" (click)="alertDelete()">Delete</span><span id="edit" [routerLink]="['/edit-supplier', 'test']">Edit</span></td>
+          </tr>
+        </tbody>
+      </table>
+</div>
