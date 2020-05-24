@@ -1,0 +1,34 @@
+/* The CSS property margin defines the margin area on the four sides of the element. */
+.container-fluid{
+    margin-top: 50px;
+}
+.error {
+    color:red;
+}
+.delete{
+    color: white;
+    padding: 5px;
+    background: red;
+    cursor: pointer;
+}
+.edit{
+    margin-left: 5px;
+    color: white;
+    padding: 5px;
+    background: blue;
+    cursor: pointer;
+}
+
+p {
+    text-align: center;
+}
+
+#table {
+    padding: 50px;
+    left: 0;
+    height: 500px;
+    width: 100%;
+    position: fixed;
+    top: 160px;
+    overflow: auto;
+}
