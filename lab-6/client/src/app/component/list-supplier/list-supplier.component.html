@@ -1,0 +1,58 @@
+<!-- Div tag separates groups of related menu items with a divider -->
+<div class="container-fluid col-10">
+  <!-- Here we are using 10 of 12 columns and centralizing the component -->
+  <h3>Suppliers List</h3>
+
+  <!-- The *ngIf is used as a condition structure. If the isLoadingList is true, shows the Loading message, 
+    otherwise if isLoadingList is false and the request didn't returned an error it shows other block-->
+  <div *ngIf="isLoadingList">
+    <p>Loading...</p>
+  </div>
+
+  <div id="table" *ngIf="!isLoadingList && !errorList">
+    <table class="table">
+      <!-- Tag for table creation -->
+      <thead>
+        <tr>
+          <!-- Each table row is defined with the <tr> tag -->
+          <!-- A table header is defined with the <th> tag -->
+          <th scope="col">Name</th>
+          <th scope="col">CNPJ</th>
+          <th scope="col">Address</th>
+          <th scope="col">Tel</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Table body-->
+        <!-- The *ngFor is used to iterate the suppliersList array that is populated in the ngOnInit(). 
+          The let in = index is used to track the index of the table row in the suppliersList array -->
+        <tr *ngFor="let supplier of suppliersList; let in = index">
+          <!-- A table data/cell is defined with the <td> tag -->
+          <td>{{supplier.doc.name}}</td> <!-- Interpolation of a object in the suppliersList. For each <td> a key -->
+          <td>{{supplier.doc.cnpj}}</td>
+          <td>{{supplier.doc.address}}</td>
+          <td>{{supplier.doc.tel}}</td>
+          <td>
+            <span class="delete" id="{{'delete-loading-' + in}}" value="Delete" hidden>Deleting...</span>
+            <!-- If the user clicks in the Delete button it is going to trigger the deleteSupplier() method,
+              with the index of this supplier in the suppliersList index -->
+            <span class="delete" id="{{'delete-' + in}}" value="Delete" (click)="deleteSupplier(in)">Delete</span>
+            <span class="edit" id="{{'edit-' + in}}" [routerLink]="['/edit-supplier', supplier.doc._id]">Edit</span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- If errorList is true, shows the errorListMsg -->
+  <div *ngIf="errorList">
+    <p class="error">{{errorListMsg}}</p>
+  </div>
+
+  <!-- If errorDelete is true, shows the errorDeleteMsg -->
+  <div *ngIf="errorDelete">
+    <p class="error">{{errorDeleteMsg}}</p>
+  </div>
+
+</div>
