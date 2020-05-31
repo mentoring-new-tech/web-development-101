@@ -1,0 +1,46 @@
+<!-- Div tag separates groups of related menu items with a divider -->
+<!-- All HTML headings, <h1> through <h6>, are available -->
+<!-- Containers are the most basic layout element in Bootstrap and are required when using our default grid system -->
+<div class="container-fluid col-4">
+    <!-- Here we are using 4 of 12 columns and centralizing the component-->
+    <h3>Edit Supplier</h3>
+    <!-- We use the supplierForm to receive the ngForm, in order to bind it to our supplier object -->
+    <form #supplierForm="ngForm">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <!-- This [(ngModel)]="supplier.name" means that if the user types, or erases something in this field
+              it will automatically be changed in the supplier.name that was defined in the add-supplier.component.ts -->
+            <input type="text" class="form-control" id="name" [(ngModel)]="supplier.name" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="cnpj">CNPJ</label>
+            <input type="text" class="form-control" id="cnpj" [(ngModel)]="supplier.cnpj" name="cnpj" required>
+        </div>
+        <div class="form-group">
+            <label for="address">Address</label>
+            <input type="text" class="form-control" id="address" [(ngModel)]="supplier.address" name="address" required>
+        </div>
+        <div class="form-group">
+            <label for="tel">Tel</label>
+            <input type="text" class="form-control" id="tel" [(ngModel)]="supplier.tel" name="tel" required>
+        </div>
+        <!-- If the user clicks in the Cancel button it will trigger the goBack() method -->
+        <button class="btn btn-danger" (click)="goBack()">Cancel</button>
+        <!-- If the user clicks in the Save button it will trigger the submitSupplier() method -->
+        <button type="submit" class="btn btn-primary" (click)="updateSupplier()" [disabled]="!supplierForm.form.valid">Edit</button>
+    </form>
+
+    <!-- Initially the Loading, Error or Success message are not going to appear in the user interface,
+        only when the request is being processed and when it comes back to the client side -->
+
+    <div *ngIf="isLoading">
+        <p id="loading">Loading...</p>
+    </div>
+    <div *ngIf="successSubmit">
+        <p id="success">{{successMsg}}</p>
+    </div>
+    <div *ngIf="error">
+        <p id="error">{{errorMsg}}</p>
+    </div>
+
+</div>
